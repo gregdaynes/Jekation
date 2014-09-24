@@ -1,0 +1,175 @@
+@import "settings";
+
+/*----------------------------*\
+//! BUTTONS
+\*----------------------------*/
+
+.button {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.button.secondary {
+    background-color: hsla(0,0,100%, 0.3);
+    border-width: 2px;
+    border-color: #fff;
+    box-shadow: 0 1px 2px hsla(0,0,0,0.2),
+                inset 0 1px 2px hsla(0,0,0,0.2);
+    color: #fff;
+}
+
+
+
+
+
+/*----------------------------*\
+//! FORMS
+\*----------------------------*/
+
+label {
+    color: $form-label-font-color;
+}
+
+span.postfix {
+    border-top-right-radius: $global-radius;
+    border-bottom-right-radius: $global-radius;
+
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea {
+    border-radius: $global-radius;
+
+    &:focus {
+      box-shadow: 0 0 0 1px $primary-color;
+    }
+}
+
+select {
+    border-radius: $global-radius;
+}
+
+
+
+
+.control {
+  position: relative;
+  padding-left: 1.5rem; /* offset label from control indicator */
+
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+  }
+
+  .control-indicator {
+    position: absolute;
+    top: .25rem;
+    left: 0;
+    display: block;
+    width:  1rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 65%;
+    color: $white;
+    text-align: center;
+    background-color: $white;
+    background-size: 50% 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    user-select: none;
+  }
+}
+
+.control-indicator {
+
+  /* Focus */
+  input:focus ~ & {
+    box-shadow: 0 0 0 1px $white,
+                0 0 0 2px $primary-color;
+  }
+
+  /* Checked state */
+  input:checked ~ & {
+    color: $white;
+    background-color: $primary-color;
+  }
+
+  /* Active */
+  input:active ~ & {
+    color: $white;
+    background-color: $primary-color;
+  }
+
+  /* Checkbox modifiers */
+  .checkbox > & {
+    border-radius: $global-radius;
+  }
+
+  .checkbox input:checked ~ & {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+  }
+
+  /* Radio modifiers */
+  .radio > & {
+    border-radius: $global-rounded;
+  }
+
+  .radio input:checked ~ & {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+  }
+
+}
+
+
+
+
+
+/*----------------------------*\
+//! PANELS
+\*----------------------------*/
+
+.panel.callout {
+  background-color: scale-color($steel, $lightness: 5%);
+  border-color: scale-color($steel, $lightness: 10%);
+}
+
+
+
+
+
+/*----------------------------*\
+//! RANGE SLIDER
+\*----------------------------*/
+
+
+
+
+
+
+/*----------------------------*\
+//! TYPE
+\*----------------------------*/
+$header-font-color: $white;
+
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 {
+    color: $header-font-color;
+}
